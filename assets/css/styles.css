@@ -1,0 +1,169 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+#dynamicForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  flex: 1 1 calc(50% - 20px);
+  /* Two columns with gap */
+  min-width: 300px;
+  /* Minimum width before wrapping */
+}
+
+/* Full width for specific fields */
+.form-group:has(textarea),
+.form-group:has(input[type="url"]),
+.form-group:has(input[type="date"]),
+.form-group:has(select) {
+  flex: 1 1 100%;
+}
+
+/* Full width for checkbox groups */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Special styling for terms and newsletter checkboxes */
+.form-group:has(input[name="terms"]),
+.form-group:has(input[name="newsletter"]) {
+  flex: 1 1 100%;
+  margin-bottom: 5px;
+}
+
+.form-group:has(input[name="terms"]) {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 200px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .form-group {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+/* Medium screens (768px to 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  body {
+    padding: 15px;
+  }
+
+  .form-group {
+    flex: 1 1 calc(50% - 15px);
+    min-width: 250px;
+  }
+
+  #dynamicForm {
+    gap: 15px;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+}
+
+/* Small screens (up to 767px) */
+@media (max-width: 767px) {
+  .form-group {
+    flex: 1 1 100%;
+    /* Single column on mobile */
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  #dynamicForm {
+    gap: 10px;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 8px;
+    font-size: 16px;
+    /* Larger font for better touch targets */
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  button {
+    max-width: 100%;
+  }
+}
