@@ -12,10 +12,14 @@ A dynamic form generator that creates and validates 20 different input fields us
 - ⚡ Real-time validation
 - 📝 Easy to maintain and extend
 
+## Live Preview
+
+[https://dynamic-form-generator-hazel.vercel.app/](https://dynamic-form-generator-hazel.vercel.app/)
+
 ## Project Structure
 
 ```
-Dynamic Form/
+form-generator/
 ├── assets/
 │   ├── css/
 │   │   └── styles.css    # Form styling
